@@ -1,0 +1,48 @@
+package com.dubbo.dao;
+
+import com.dubbo.entity.Page;
+import com.dubbo.entity.User;
+import com.dubbo.entity.UserPojo;
+
+import java.util.List;
+
+public interface UserDao{
+
+    /**
+     * ?????????
+     * @param page
+     * @return Integer
+     */
+    Integer getCount(Page<UserPojo> page);//@Param??????????
+
+    /**
+     * ???????????user???????
+     * @return List<User>
+     */
+    List<UserPojo> query(Page<UserPojo> page);
+
+    /**
+     * ?????????
+     * @param user
+     */
+    void add(User user);
+
+    /**
+     * ?????????
+     * @param user
+     */
+    void update(User user);
+
+    /**
+     * ?????????
+     * @param id
+     */
+    void delete(Integer id);
+
+    /**
+     * ????id??????????
+     * @param id
+     * @return User
+     */
+    User getById(Integer id);
+}
